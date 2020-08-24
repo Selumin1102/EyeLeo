@@ -6,6 +6,7 @@ plugins {
     id("org.openjfx.javafxplugin") version "0.0.8"
     kotlin("jvm") version "1.3.72"
     kotlin("plugin.spring") version "1.3.72"
+    idea
 }
 
 group = "org.eyeleo"
@@ -23,6 +24,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 javafx {

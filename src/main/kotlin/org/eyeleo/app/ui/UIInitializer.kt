@@ -9,6 +9,7 @@ import javafx.scene.layout.StackPane
 import javafx.scene.layout.VBox
 import javafx.scene.paint.Color
 import javafx.stage.StageStyle
+import org.eyeleo.app.ui.tray.TrayInitializer
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 import javax.swing.SwingUtilities
@@ -21,7 +22,7 @@ class UIInitializer(
     fun initializeUI(event: JavaFxApplicationCreatedEvent) {
         val stage = event.getStage()
 
-        SwingUtilities.invokeLater { trayInitializer.initTray(stage) }
+        SwingUtilities.invokeLater { trayInitializer.initTray(UIInitializationContext(stage)) }
 
         stage.initStyle(StageStyle.TRANSPARENT)
 
