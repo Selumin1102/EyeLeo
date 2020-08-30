@@ -1,14 +1,17 @@
 package org.eyeleo.app.ui.tray
 
 import javafx.application.Platform
+import javafx.scene.Scene
 import javafx.stage.Stage
+import org.eyeleo.app.ui.settings.SettingWindowBuilder
 import org.eyeleo.app.ui.showAtFront
 import org.springframework.stereotype.Component
 import java.awt.*
 
 @Component
 class TrayPopupMenuInitializer(
-    private val trayPopupMenuStrings: TrayPopupMenuStrings
+    private val trayPopupMenuStrings: TrayPopupMenuStrings,
+    private val settingsWindowBuilder: SettingWindowBuilder
 ) {
     fun initPopupMenu(context: TrayInitializationContext) {
         val (stage, tray, trayIcon) = context
@@ -29,7 +32,15 @@ class TrayPopupMenuInitializer(
 
     private fun buildOpenSettingsMenuItem(stage: Stage): MenuItem =
         MenuItem(trayPopupMenuStrings.openSettings).also {
-            it.addActionListener { Platform.runLater { stage.showAtFront() } }
+            it.addActionListener {
+                val appSettingsWindow = settingsWindowBuilder.buildAppSettingsWindow()
+                Platform.runLater {
+                    stage.scene = Scene(appSettingsWindow)
+                    stage.title= "EyeLeo настройки"
+                    stage.resizableProperty().set(false)
+                    stage.showAtFront()
+                }
+            }
         }
 
     private fun buildDisableForMenuItem(): MenuItem =

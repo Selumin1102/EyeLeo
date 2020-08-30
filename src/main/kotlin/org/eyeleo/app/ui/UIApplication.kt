@@ -30,8 +30,3 @@ class UIApplication: Application() {
 class JavaFxApplicationCreatedEvent( stage: Stage) : ApplicationEvent(stage) {
     fun getStage() = getSource() as Stage
 }
-
-fun Stage.showAtFront() {
-    show()
-    toFront()
-}

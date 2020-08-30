@@ -1,14 +1,9 @@
 package org.eyeleo.app.ui
 
-import javafx.event.EventHandler
 import javafx.geometry.Pos
 import javafx.scene.Node
-import javafx.scene.Scene
 import javafx.scene.control.Label
-import javafx.scene.layout.StackPane
 import javafx.scene.layout.VBox
-import javafx.scene.paint.Color
-import javafx.stage.StageStyle
 import org.eyeleo.app.ui.tray.TrayInitializer
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
@@ -24,18 +19,18 @@ class UIInitializer(
 
         SwingUtilities.invokeLater { trayInitializer.initTray(UIInitializationContext(stage)) }
 
-        stage.initStyle(StageStyle.TRANSPARENT)
-
-        val layout = StackPane(createContent())
-        layout.style = "-fx-background-color: rgba(255, 255, 255, 0.5);"
-        layout.setPrefSize(300.0, 200.0)
-
-        layout.onMouseClicked = EventHandler { stage.hide() }
-
-        val scene = Scene(layout)
-        scene.fill = Color.TRANSPARENT
-
-        stage.scene = scene
+//        stage.initStyle(StageStyle.TRANSPARENT)
+//
+//        val layout = StackPane(createContent())
+//        layout.style = "-fx-background-color: rgba(255, 255, 255, 0.5);"
+//        layout.setPrefSize(300.0, 200.0)
+//
+//        layout.onMouseClicked = EventHandler { stage.hide() }
+//
+//        val scene = Scene(layout)
+//        scene.fill = Color.TRANSPARENT
+//
+//        stage.scene = scene
     }
 
     private fun createContent(): Node {
