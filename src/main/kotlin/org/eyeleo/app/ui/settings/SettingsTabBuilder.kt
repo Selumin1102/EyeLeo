@@ -1,6 +1,9 @@
 package org.eyeleo.app.ui.settings
 
-import javafx.scene.control.*
+import javafx.scene.control.CheckBox
+import javafx.scene.control.ChoiceBox
+import javafx.scene.control.Label
+import javafx.scene.control.Tab
 import javafx.scene.layout.HBox
 import javafx.scene.layout.VBox
 import org.eyeleo.app.settings.AppSettings

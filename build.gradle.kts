@@ -25,6 +25,7 @@ dependencies {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    implementation("no.tornado:tornadofx:1.7.20")
 }
 
 javafx {
