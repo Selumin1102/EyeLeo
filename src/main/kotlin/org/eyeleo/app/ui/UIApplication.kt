@@ -10,7 +10,7 @@ import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.stereotype.Component
 
 @Component
-class UIApplication: Application() {
+class UIApplication : Application() {
     private lateinit var context: ConfigurableApplicationContext
 
     override fun init() {
@@ -27,6 +27,6 @@ class UIApplication: Application() {
     }
 }
 
-class JavaFxApplicationCreatedEvent( stage: Stage) : ApplicationEvent(stage) {
+class JavaFxApplicationCreatedEvent(stage: Stage) : ApplicationEvent(stage) {
     fun getStage() = getSource() as Stage
 }

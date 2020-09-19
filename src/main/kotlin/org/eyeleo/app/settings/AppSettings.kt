@@ -19,5 +19,5 @@ data class LongBreakSettings(
 )
 
 data class ShortBreakSettings(
-    val enabled: Boolean = true, val intervalMinutes: Int = 10, val lengthSeconds: Int = 8
+    val enabled: Boolean = true, val intervalMinutes: Int = 1, val lengthSeconds: Int = 8
 )
