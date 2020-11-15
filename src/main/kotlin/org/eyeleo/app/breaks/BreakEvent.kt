@@ -7,10 +7,6 @@ sealed class BreakEvent {
         object RotateEyes : ShortBreak() {
             override fun getHint() = "Вращйте глазами"
         }
-
-        object A : ShortBreak() {
-            override fun getHint() = "test"
-        }
     }
 
     sealed class LongBreak : BreakEvent() {

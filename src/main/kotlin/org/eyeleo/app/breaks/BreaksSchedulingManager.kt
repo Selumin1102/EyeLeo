@@ -23,7 +23,7 @@ class BreaksSchedulingManager(
         val shortBreakSettings = appSettingsContainer.settings.shortBreakSettings
         shortBreaksExecutor.scheduleAtFixedRate(
             { breakEventsMulticaster.fireEvent(shortBreakEventCreator.createEvent()) },
-            shortBreakSettings.intervalMinutes.toLong(),
+            0,
             shortBreakSettings.intervalMinutes.toLong(),
             TimeUnit.MINUTES
         )

@@ -12,10 +12,11 @@ class ShortBreakEventHandler(
 ) : BreakEventHandler<ShortBreak> {
     override fun onEvent(event: ShortBreak) {
         val settings = appSettingsContainer.settings.shortBreakSettings
+        shortBreakPresenter.viewShortBreakWindow(event.getHint(), settings.lengthSeconds)
         for (i in settings.lengthSeconds downTo 0) {
-            shortBreakPresenter.viewShortBreak(ShortBreakData(event.getHint(), i))
             Thread.sleep(1000)
-            shortBreakPresenter.dismiss()
+            shortBreakPresenter.setSecondsLeft(i)
         }
+        shortBreakPresenter.dismiss()
     }
 }

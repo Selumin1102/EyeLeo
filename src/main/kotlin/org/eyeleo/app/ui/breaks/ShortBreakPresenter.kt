@@ -1,8 +1,7 @@
 package org.eyeleo.app.ui.breaks
 
-import org.eyeleo.app.breaks.ShortBreakData
-
 interface ShortBreakPresenter {
-    fun viewShortBreak(data: ShortBreakData)
+    fun viewShortBreakWindow(text: String, secondsLeft: Int)
+    fun setSecondsLeft(secondsLeft: Int)
     fun dismiss()
 }
